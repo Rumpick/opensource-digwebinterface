@@ -19,7 +19,7 @@ RUN { \
 } > /usr/local/etc/php/conf.d/opcache-recommended.ini
 
 # Configure PHP-FPM to listen on unix socket for better performance
-RUN sed -i 's/listen = 9000/listen = \/var\/run\/php-fpm.sock/' /usr/local/etc/php-fpm.d/zz-docker.conf && \
+RUN sed -i 's/listen = 9000/listen = \/var\/run\/php-fpm.sock/' /usr/local/etc/php-fpm.d/docker.conf && \
     echo "listen.owner = nginx" >> /usr/local/etc/php-fpm.d/zz-docker.conf && \
     echo "listen.group = nginx" >> /usr/local/etc/php-fpm.d/zz-docker.conf && \
     echo "listen.mode = 0660" >> /usr/local/etc/php-fpm.d/zz-docker.conf
